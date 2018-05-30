@@ -1,0 +1,15 @@
+version: '3'
+services:
+    webapp:
+        image: nginx:latest
+        ports:
+          - "8182:80"
+        deploy:
+          replicas: 3
+        volumes:
+          -  db-data:/ap
+
+    app:
+        image: ubuntu:latest
+volumes:
+   db-data:
